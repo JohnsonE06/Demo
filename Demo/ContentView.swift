@@ -8,16 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var appName: String = "App Name"
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text(appName)
+                .foregroundColor(Color.black)
+                .padding(25)
+            Spacer()
+            HStack{
+                Button("Sleepy Joe") {
+                    appName = "Sleepy Joe"
+                }
+                .padding(10)
+                Button("Top-Heavy Giant") {
+                    appName = "Top-Heavy Giant"
+                }
+                Button("Snoring Screamer") {
+                    appName = "Snoring Screamer"
+                }
+                .padding(10)
+            }
+            Spacer()
+            
+            AppNameRow()
         }
-        .padding()
+        }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -25,4 +42,3 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-print("Hola");
